@@ -13,6 +13,6 @@ import com.example.myapplication.R;
 public class People extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_notification, container, false);
+        return inflater.inflate(R.layout.activity_people, container, false);
     }
 }

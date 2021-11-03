@@ -4,6 +4,8 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -91,6 +93,28 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item != null)
+            when(item.itemId){
+                R.id.myProfile -> {
+                    Toast.makeText(this,"What is Kotlin ?\n" +
+                            "Kotlin is a statically-typed programming language for modern multi-platform applications.  Kotlin was developed by JetBrains, a company acclaimed for developing tools for professionals. The foremost goal of Kotlin is to provide a concise, productive and safer alternative to Java. The most common areas to use Kotlin are\n" +
+                            "Building server-side code\n" +
+                            "Building mobile applications that run on Android devices",Toast.LENGTH_LONG).show()
+                }
+                R.id.info -> {
+                    Toast.makeText(this,"GitHub.com/alirezsbashi",Toast.LENGTH_SHORT).show()
+                }
+                android.R.id.home -> {
+                    drawerLayout.openDrawer(GravityCompat.START)
+                    true
+                }
+            }
+        return true
+    }
+
+
 
     private fun replaceFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
